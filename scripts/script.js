@@ -28,9 +28,10 @@ $(document).ready(function () {
   $('.button-controller-next').on('click.next', function () {
     const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
     if (id_btn < 7) {
+      let isActive = $("#new-content").hasClass("active")?true:false;
 
       // Анимация перехода
-      animateTranslate($("#new-content").hasClass("active")?true:false);
+      animateTranslate(isActive);
       $("#new-content").toggleClass("active");
 
 
@@ -55,7 +56,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $('#new-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -80,7 +81,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
           $.ajax({
@@ -104,7 +105,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -126,7 +127,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/prints.php',
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -148,7 +149,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/count.php",
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -162,7 +163,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/services.php",
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActive?'#new-content':".inner-container.page-content").html(html);
             }
           });
 

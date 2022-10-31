@@ -16,10 +16,9 @@ TweenMax.set("#new-content", {
   x: siteW / 2
 });
 
-var tlFlip = null; //new TimelineMax();
 
 function animateTranslate(isRotate) {
-  tlFlip = new TimelineMax();
+  var tlFlip = new TimelineMax();
   tlFlip
     .to('.main-scale-container', .2, {
       scale: 0.8,
