@@ -1,0 +1,265 @@
+.btn-help {
+
+  width: 160px;
+  height: 35px;
+
+  margin-bottom: 15px;
+  margin-top: auto;
+
+  background: black;
+  border-radius: 0px 20px;
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.btn-navigation {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 20px;
+
+  padding: 4px;
+
+  background-color: black;
+  color: white;
+
+  cursor: pointer;
+}
+
+.button-navigate {
+  all: inherit;
+
+  height: fit-content;
+  text-align: center;
+  transition: none;
+
+  background-color: transparent;
+  margin: 0;
+  padding: 13px 20px;
+  border: 0;
+
+  box-shadow: none;
+}
+
+.btn-more-info {
+  max-width: 140px;
+  width: 100%;
+  min-height: 35px;
+  max-height: 35px;
+
+  border: 0;
+  border-radius: 15px;
+
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-more-info:active {
+  transform: scale(90%);
+}
+
+.button-controller-back,
+.button-controller-next {
+  cursor: pointer;
+
+  border: 0;
+  background-color: black;
+
+  width: 110px;
+  height: 35px;
+
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  transition: all 0.3s;
+}
+
+.button-controller-back {
+  border-radius: 0 20px;
+}
+
+.button-controller-next {
+  border-radius: 20px 0;
+}
+
+:is(.button-controller-back, .button-controller-next, .btn-help):hover {
+  transform: scale(110%);
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.33);
+}
+
+:is(.button-controller-back, .button-controller-next, .btn-help):active {
+  transform: scale(90%);
+}
+
+.btn-radio {
+  height: fit-content;
+  align-self: center;
+}
+
+.button-view {
+  flex-basis: 80px;
+  width: 80px;
+  height: 70px;
+
+  position: relative;
+
+  border: 0;
+
+  background: no-repeat transparent center;
+  background-size: contain;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.button-view#front {
+  background-image: url('../imgs/футболка-спереди.svg');
+}
+
+.button-view#back {
+  background-image: url('../imgs/футболка-сзади.svg');
+}
+
+.button-view#left {
+  /* поправить картинку */
+  background-image: url('../imgs/футболка-спереди.svg');
+}
+
+.button-view#right {
+  /* поправить картинку */
+  background-image: url('../imgs/футболка-спереди.svg');
+}
+
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view {
+  background-color: transparent;
+  background-image: none;
+  cursor: default;
+}
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view::before {
+  content: '';
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+
+  left: 0px;
+  top: 0px;
+
+  background: no-repeat center;
+  background-size: contain;
+}
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view#front::before {
+  background-image: url('../imgs/футболка-спереди-белая.svg');
+}
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view#back::before {
+  background-image: url('../imgs/футболка-сзади-белая.svg');
+}
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view#left::before {
+  /* поправить картинку */
+  background-image: url('../imgs/футболка-сзади-белая.svg');
+}
+
+:is(.front-side, .back-side, .left-side, .right-side).active .button-view#right::before {
+  /* поправить картинку */
+  background-image: url('../imgs/футболка-сзади-белая.svg');
+}
+
+
+.button-add-print-filter {
+  background-color: white;
+
+  border-radius: 50%;
+  border: 1px black solid;
+
+  min-width: 15px;
+  height: 15px;
+
+  cursor: pointer;
+  
+  transition: border-color 0.3s ease;
+}
+
+.button-add-file {
+  position: relative;
+
+  width: 135px;
+  height: 45px;
+
+  padding: 10px;
+
+  background-color: transparent;
+
+  border-radius: 15px;
+  border: 1px black solid;
+  color: #fff;
+  
+  cursor: pointer;
+
+  overflow: hidden;
+  transform: scale(0.94);
+  transition: all 1s;
+}
+
+
+.button-add-file::before {
+  content: '';
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 120%;
+  height: 100%;
+
+  background-color: #fff;
+
+  z-index: -1;
+  transform: translateX(-120%) skew(0);
+  transition: all 0.8s ease;
+}
+
+.button-add-file::after {
+  content: '';
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #000;
+  z-index: -2;
+}
+
+.button-add-file:hover::before {
+  transform: translateX(-8%) skew(-45deg);
+}
+
+.button-add-file:hover {
+  color: black;
+}
+
+.button-add-file:active {
+  transition: 0.2s;
+  transform: scale(0.86);
+}

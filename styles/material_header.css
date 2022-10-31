@@ -1,0 +1,133 @@
+.additional-filter-container,
+.filter-container {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 180px;
+  width: 100%;
+
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: black;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  margin: 10px 0;
+
+  transition: 0.2s ease;
+}
+
+a.form{
+  margin: 0;
+}
+
+.form:hover .button-add-print-filter{
+  border-color: gray;
+}
+
+.form:active{
+  transform: scale(0.95);
+}
+
+.form.active .button-add-print-filter{
+  background-color: black;
+}
+
+.form .text{
+  width: 100%;
+}
+
+.title {
+user-select: none;
+
+  font-weight: 700;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.filters{
+  display: flex;
+  padding: 5px;
+}
+
+
+.main-filter{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.color-bar{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+}
+
+label.title{
+  margin: 0;
+}
+
+.color-selector{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  width: 60px;
+  height: 60px;
+}
+
+.color-selector::-webkit-color-swatch{
+  border-radius: 10px;
+  border: none;
+}
+
+.color-selector::-moz-color-swatch{
+  border-radius: 10px;
+  border: none;
+}
+
+.add-file{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  
+  padding: 15px 5px;
+
+  user-select: none;
+
+  border: 1px black solid;
+}
+
+.additional-filter{
+  position: absolute;
+  background-color: white;
+
+  margin-left: 150px;
+  margin-top: 15px;
+
+  overflow-y: scroll;
+
+  max-width: 175px;
+}

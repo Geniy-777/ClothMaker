@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/buttons.css" />
+    <link rel="stylesheet" href="styles/material_header.css" />
+    <link rel="stylesheet" href="styles/print-page.css" />
+    <link rel="stylesheet" href="styles/count-service-page.css" />
+    <link rel="stylesheet" href="styles/popup.css" />
+
+    <title>ClothMaker</title>
+  </head>
+
+  <body>
+    <div class="content">
+      <header class="header">
+        <div class="header__container"></div>
+      </header>
+
+      <div class="popup__bg">
+        <form class="popup">
+          <div class="top-side">
+            <img src="images/close.png" class="close-popup" />
+            <label for="" class="title">Поделится</label>
+          </div>
+          <div class="select-wrapper">
+            <div class="select">
+              <div>
+                <button class="button-share button-popup-vk">
+                  <img src="images/social/vk.png" alt="" /> ВКонтакте
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-whatapp">
+                  <img src="images/social/whats-app.png" alt="" />WhatsApp
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-facebook">
+                  <img src="images/social/Facebook.png" alt="" /> Facebook
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-twitter">
+                  <img src="images/social/twitter.png" alt="" /> Twitter
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-youtube">
+                  <img src="images/social/YouTube.png" alt="" /> YouTube
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-pinterest">
+                  <img src="images/social/Pinterest.png" alt="" /> Pinterest
+                </button>
+              </div>
+              <div>
+                <button class="button-share button-popup-instagram">
+                  <img src="images/social/Instagram.png" alt="" /> Instagram
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="link">
+            <input
+              class="copy-input"
+              type="text"
+              value="https://geniy-777.github.io/miratex/"
+            />
+            <button class="button-share-link">Копировать</button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="container"
+        style="
+          -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -o-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+        "
+      >
+        <div class="content-navigation">
+          <div class="navigation">
+            <div class="box-btn-animation active">
+              <button class="btn-navigation" id="1">Одежда</button>
+              <div class="mark-active-nav"></div>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="2">2</button>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="3">3</button>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="4">4</button>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="5">5</button>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="6">6</button>
+              <div class="mark-active" hidden></div>
+            </div>
+
+            <div class="connect-btn-navigate"></div>
+
+            <div class="box-btn-animation">
+              <button class="btn-navigation" id="7">7</button>
+              <div class="mark-active" hidden></div>
+            </div>
+          </div>
+          <div class="search">
+            <input type="text" class="input-search" placeholder="Я ищу..." />
+          </div>
+        </div>
+
+        <div class="main-scale-container">
+          <div class="main-flip-container">
+            <div class="inner-container page-content"></div>
+            <div class="page-content active"  id="new-content"></div>
+          </div>
+        </div>
+
+        <div class="controller">
+          <button class="button-controller button-controller-back">
+            Назад
+          </button>
+          <button class="button-controller button-controller-next">
+            Вперед
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/TweenMax.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/animation-logic.js"></script>
+  </body>
+</html>
