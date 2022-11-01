@@ -14,7 +14,7 @@ window.onload = function () {
     type: "GET",
     url: 'back/standart_header.php',
     success: function (html) {
-      $('.header__container').html(html);
+      $('.header__page-content.inner__content').html(html);
     }
   });
 
@@ -27,12 +27,18 @@ $(document).ready(function () {
   $('.button-controller-next').off();
   $('.button-controller-next').on('click.next', function () {
     const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
+
     if (id_btn < 7) {
-      let isActive = $("#new-content").hasClass("active")?true:false;
+      let isActiveContent = $("#new-content").hasClass("active")?true:false;
+      let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
 
       // Анимация перехода
-      animateTranslate(isActive);
+      animateTranslateContent(isActiveContent);
+      animateTranslateHeader(isActiveHeader);
+
       $("#new-content").toggleClass("active");
+      $("#new-header-content").toggleClass("active");
+
 
 
       //$('.box-btn-animation.active').find('.mark-active').hide();
@@ -56,7 +62,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -64,7 +70,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -81,14 +87,14 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
           $.ajax({
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -105,7 +111,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -114,7 +120,7 @@ $(document).ready(function () {
             url: "back/material_header.php",
             data: "materials",
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
           break;
@@ -127,7 +133,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/prints.php',
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -135,7 +141,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/print_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -149,7 +155,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/count.php",
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -163,7 +169,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/services.php",
             success: function (html) {
-              $(isActive?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -200,7 +206,18 @@ $(document).ready(function () {
   $('.button-controller-back').on('click.back', function () {
     const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
     if (id_btn > 1) {
-      $('.box-btn-animation.active').find('.mark-active').hide();
+
+      let isActiveContent = $("#new-content").hasClass("active")?true:false;
+      let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
+
+      // Анимация перехода
+      animateTranslateContent(isActiveContent);
+      animateTranslateHeader(isActiveHeader);
+
+      $("#new-content").toggleClass("active");
+      $("#new-header-content").toggleClass("active");
+
+      
       $('.box-btn-animation.active').removeClass('active');
       $('.btn-navigation#' + (id_btn - 1)).parent().addClass('active');
 
@@ -220,7 +237,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -228,7 +245,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -245,7 +262,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -253,7 +270,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -270,7 +287,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -278,7 +295,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -295,7 +312,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -304,7 +321,7 @@ $(document).ready(function () {
             url: "back/material_header.php",
             data: "materials",
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -318,14 +335,14 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/prints.php',
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
           $.ajax({
             type: "GET",
             url: 'back/print_header.php',
             success: function (html) {
-              $('.header__container').html(html);
+              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
             }
           });
 
@@ -337,12 +354,10 @@ $(document).ready(function () {
 
           $.ajax({
             type: "GET",
-            url: 'back/carts.php',
-            data: {
-              'id': (id_btn - 1)
-            },
+            url: "back/count.php",
+            data:{id:id_btn-1},
             success: function (html) {
-              $('.main-content').html(html);
+              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
             }
           });
 
@@ -377,6 +392,17 @@ $(document).ready(function () {
 
   $('.btn-navigation').off('click.top-nav');
   $('.btn-navigation').on('click.top-nav', function () {
+    
+    let isActiveContent = $("#new-content").hasClass("active")?true:false;
+    let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
+
+    // Анимация перехода
+    animateTranslateContent(isActiveContent);
+    animateTranslateHeader(isActiveHeader);
+
+    $("#new-content").toggleClass("active");
+    $("#new-header-content").toggleClass("active");
+    
     const id = $(this).attr('id');
     $(this).text('');
     switch (Number(id)) {
@@ -386,7 +412,7 @@ $(document).ready(function () {
         $($('.btn-navigation').not($(this))).parent().removeClass('active');
         $($(this)).parent().addClass('active')
 
-        //  Кружащи элемент
+        //  Кружащий элемент
         //$($('.btn-navigation').not($(this))).next().hide();
         //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
 
@@ -404,7 +430,7 @@ $(document).ready(function () {
             'id': id
           },
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
 
@@ -413,7 +439,7 @@ $(document).ready(function () {
           type: "GET",
           url: 'back/standart_header.php',
           success: function (html) {
-            $('.header__container').html(html);
+            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
           }
         });
 
@@ -436,14 +462,14 @@ $(document).ready(function () {
             'id': id
           },
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
         $.ajax({
           type: "GET",
           url: 'back/standart_header.php',
           success: function (html) {
-            $('.header__container').html(html);
+            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
           }
         });
         break;
@@ -465,14 +491,14 @@ $(document).ready(function () {
             'id': id
           },
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
         $.ajax({
           type: "GET",
           url: 'back/standart_header.php',
           success: function (html) {
-            $('.header__container').html(html);
+            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
           }
         });
         break;
@@ -494,7 +520,7 @@ $(document).ready(function () {
             'id': id
           },
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
 
@@ -505,7 +531,7 @@ $(document).ready(function () {
             'id': id
           },
           success: function (html) {
-            $('.header__container').html(html);
+            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
           }
         });
 
@@ -526,7 +552,7 @@ $(document).ready(function () {
           type: "GET",
           url: 'back/prints.php',
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
 
@@ -534,7 +560,7 @@ $(document).ready(function () {
           type: "GET",
           url: "back/print_header.php",
           success: function (html) {
-            $('.header__container').html(html);
+            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
           }
         });
 
@@ -554,7 +580,7 @@ $(document).ready(function () {
           type: "GET",
           url: "back/count.php",
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
 
@@ -575,7 +601,7 @@ $(document).ready(function () {
           type: "GET",
           url: "back/services.php",
           success: function (html) {
-            $('.main-content').html(html);
+            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
           }
         });
 
