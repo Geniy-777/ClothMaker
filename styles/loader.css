@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap);
+
+.loader {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  font-family: 'Fredoka One', cursive;
+  font-weight: bold;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.loader__title {
+  min-width: 590px;
+  max-width: 590px;
+  font-size: 25vmin;
+  --hue: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: hsl(var(--hue), 50%, 95%);
+  text-shadow:
+    0 0 15px hsl(var(--hue), 60%, 90%, .80),
+    0 0 20px hsl(var(--hue), 70%, 80%, .85),
+    0 0 40px hsl(var(--hue), 80%, 70%, .90),
+    0 0 60px hsl(var(--hue), 90%, 60%, .95),
+    0 0 80px hsl(var(--hue), 100%, 50%, 1);
+  font-size: 100px;
+}
+
+.loader__animation {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  margin: 150px 270px 20px 0;
+  animation: shadowRolling 2s linear infinite;
+}
+
+.loader__description {
+  min-width: 253px;
+  max-width: 253px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+
+.loader__circle-helper{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  width: 200vw;
+  height: 200vw;
+  border-radius: 50%;
+  background-color: #000;
+  z-index: -1;
+  transition: all 1s linear;
+  overflow: hidden;
+}
+
+.loader.active .loader__circle-helper{
+  width: 0;
+  height: 0;
+  transition: all 1s linear;
+}
+.loader.active{
+  background-color: transparent;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 rgba(255, 255, 255, 1),
+      0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 rgba(255, 255, 255, 1),
+      100px 0 rgba(255, 255, 255, 1),
+      0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 rgba(255, 255, 255, 1),
+      110px 0 rgba(255, 255, 255, 1),
+      100px 0 rgba(255, 255, 255, 1),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 rgba(255, 255, 255, 1),
+      120px 0 rgba(255, 255, 255, 1),
+      110px 0 rgba(255, 255, 255, 1),
+      100px 0 rgba(255, 255, 255, 1);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0),
+      130px 0 rgba(255, 255, 255, 1),
+      120px 0 rgba(255, 255, 255, 1),
+      110px 0 rgba(255, 255, 255, 1);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 rgba(255, 255, 255, 1),
+      120px 0 rgba(255, 255, 255, 1);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 rgba(255, 255, 255, 1);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0);
+  }
+
+}

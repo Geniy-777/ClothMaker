@@ -1,4 +1,4 @@
-window.onload = function () {
+document.body.onload = function () {
   $.ajax({
     type: "GET",
     url: 'back/carts.php',
@@ -7,6 +7,12 @@ window.onload = function () {
     },
     success: function (html) {
       $('.main-flip-container .inner-container').html(html);
+      setTimeout(() => {
+        $(".loader").addClass("active");
+        setTimeout(() => {
+          $(".loader").remove()
+        }, 1000)
+      }, 1000)
     }
   });
 
@@ -18,9 +24,8 @@ window.onload = function () {
     }
   });
 
-  //$('.box-btn-animation.active').find('.mark-active').toggle();
 
-};
+}
 
 $(document).ready(function () {
 
@@ -29,8 +34,8 @@ $(document).ready(function () {
     const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
 
     if (id_btn < 7) {
-      let isActiveContent = $("#new-content").hasClass("active")?true:false;
-      let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
+      let isActiveContent = $("#new-content").hasClass("active") ? true : false;
+      let isActiveHeader = $("#new-header-content").hasClass("active") ? true : false;
 
       // Анимация перехода
       animateTranslateContent(isActiveContent);
@@ -62,7 +67,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -70,7 +75,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -87,14 +92,14 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
           $.ajax({
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -111,7 +116,7 @@ $(document).ready(function () {
               'id': (id_btn + 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -120,7 +125,7 @@ $(document).ready(function () {
             url: "back/material_header.php",
             data: "materials",
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
           break;
@@ -133,7 +138,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/prints.php',
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -141,7 +146,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/print_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -155,7 +160,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/count.php",
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -169,7 +174,7 @@ $(document).ready(function () {
             type: "GET",
             url: "back/services.php",
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -207,8 +212,8 @@ $(document).ready(function () {
     const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
     if (id_btn > 1) {
 
-      let isActiveContent = $("#new-content").hasClass("active")?true:false;
-      let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
+      let isActiveContent = $("#new-content").hasClass("active") ? true : false;
+      let isActiveHeader = $("#new-header-content").hasClass("active") ? true : false;
 
       // Анимация перехода
       animateTranslateContent(isActiveContent);
@@ -217,7 +222,7 @@ $(document).ready(function () {
       $("#new-content").toggleClass("active");
       $("#new-header-content").toggleClass("active");
 
-      
+
       $('.box-btn-animation.active').removeClass('active');
       $('.btn-navigation#' + (id_btn - 1)).parent().addClass('active');
 
@@ -237,7 +242,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -245,7 +250,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -262,7 +267,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -270,7 +275,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -287,7 +292,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -295,7 +300,7 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/standart_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -312,7 +317,7 @@ $(document).ready(function () {
               'id': (id_btn - 1)
             },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -321,7 +326,7 @@ $(document).ready(function () {
             url: "back/material_header.php",
             data: "materials",
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -335,14 +340,14 @@ $(document).ready(function () {
             type: "GET",
             url: 'back/prints.php',
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
           $.ajax({
             type: "GET",
             url: 'back/print_header.php',
             success: function (html) {
-              $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
             }
           });
 
@@ -355,9 +360,11 @@ $(document).ready(function () {
           $.ajax({
             type: "GET",
             url: "back/count.php",
-            data:{id:id_btn-1},
+            data: {
+              id: id_btn - 1
+            },
             success: function (html) {
-              $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
             }
           });
 
@@ -392,248 +399,254 @@ $(document).ready(function () {
 
   $('.btn-navigation').off('click.top-nav');
   $('.btn-navigation').on('click.top-nav', function () {
-    
-    let isActiveContent = $("#new-content").hasClass("active")?true:false;
-    let isActiveHeader = $("#new-header-content").hasClass("active")?true:false;
 
-    // Анимация перехода
-    animateTranslateContent(isActiveContent);
-    animateTranslateHeader(isActiveHeader);
 
-    $("#new-content").toggleClass("active");
-    $("#new-header-content").toggleClass("active");
-    
+
     const id = $(this).attr('id');
-    $(this).text('');
-    switch (Number(id)) {
-      // 1-ая кнопка в верхне навигации - Одежда, по дефолту активна
-      case 1:
 
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $($(this)).parent().addClass('active')
+    if (!$(this).parent().hasClass("active")) {
 
-        //  Кружащий элемент
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+      // Анимация перехода
+      let isActiveContent = $("#new-content").hasClass("active") ? true : false;
+      let isActiveHeader = $("#new-header-content").hasClass("active") ? true : false;
 
-        //смена названия кнопки при нажатии
-        $(this).text('Одежда');
+      animateTranslateContent(isActiveContent);
+      animateTranslateHeader(isActiveHeader);
 
-        // проверка видимости хедера
-        $('header.header').is(':visible') ? 1 : $('header.header').show();
+      $("#new-content").toggleClass("active");
+      $("#new-header-content").toggleClass("active");
 
-        // смена контента
-        $.ajax({
-          type: "GET",
-          url: 'back/carts.php',
-          data: {
-            'id': id
-          },
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-
-        // смена хедера
-        $.ajax({
-          type: "GET",
-          url: 'back/standart_header.php',
-          success: function (html) {
-            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
-          }
-        });
-
-        break;
-      case 2:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active')
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Тип издаелия');
-
-        $('header.header').is(':visible') ? 1 : $('header.header').show();
-
-        $.ajax({
-          type: "GET",
-          url: 'back/carts.php',
-          data: {
-            'id': id
-          },
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-        $.ajax({
-          type: "GET",
-          url: 'back/standart_header.php',
-          success: function (html) {
-            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
-          }
-        });
-        break;
-      case 3:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active')
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Модель');
-
-        $('header.header').is(':visible') ? 1 : $('header.header').show();
-
-        $.ajax({
-          type: "GET",
-          url: 'back/carts.php',
-          data: {
-            'id': id
-          },
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-        $.ajax({
-          type: "GET",
-          url: 'back/standart_header.php',
-          success: function (html) {
-            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
-          }
-        });
-        break;
-      case 4:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active')
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Материал');
-
-        $('header.header').is(':visible') ? 1 : $('header.header').show();
-
-        $.ajax({
-          type: "GET",
-          url: 'back/carts.php',
-          data: {
-            'id': id
-          },
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-
-        $.ajax({
-          type: "GET",
-          url: "back/material_header.php",
-          data: {
-            'id': id
-          },
-          success: function (html) {
-            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
-          }
-        });
-
-
-        break;
-      case 5:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active')
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Принт');
-
-        $('header.header').is(':visible') ? 1 : $('header.header').show();
-
-        $.ajax({
-          type: "GET",
-          url: 'back/prints.php',
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-
-        $.ajax({
-          type: "GET",
-          url: "back/print_header.php",
-          success: function (html) {
-            $(isActiveHeader?"#new-header-content":".header__page-content.inner__content").html(html);
-          }
-        });
-
-        break;
-      case 6:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active')
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Количество');
-
-        $('header.header').is(':visible') ? $('header.header').hide() : 1;
-
-        $.ajax({
-          type: "GET",
-          url: "back/count.php",
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-
-
-        break;
-      case 7:
-        $($('.btn-navigation').not($(this))).parent().removeClass('active');
-        $(this).parent().addClass('active');
-
-        //$($('.btn-navigation').not($(this))).next().hide();
-        //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
-
-        $(this).text('Услуги');
-
-        $('header.header').is(':visible') ? $('header.header').hide() : 1;
-
-        $.ajax({
-          type: "GET",
-          url: "back/services.php",
-          success: function (html) {
-            $(isActiveContent?'#new-content':".inner-container.page-content").html(html);
-          }
-        });
-
-        break;
-    }
-
-    // смена названия не активной кнопки
-    let ids = $('.btn-navigation').not($(this));
-    for (let i = 0; i < ids.length; i++) {
-      const identificator = Number($(ids[i]).attr('id'));
-      switch (identificator) {
+      $(this).text('');
+      switch (Number(id)) {
+        // 1-ая кнопка в верхне навигации - Одежда, по дефолту активна
         case 1:
-          $(ids[i]).text('1');
+
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $($(this)).parent().addClass('active')
+
+          //  Кружащий элемент
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          //смена названия кнопки при нажатии
+          $(this).text('Одежда');
+
+          // проверка видимости хедера
+          $('header.header').is(':visible') ? 1 : $('header.header').show();
+
+          // смена контента
+          $.ajax({
+            type: "GET",
+            url: 'back/carts.php',
+            data: {
+              'id': id
+            },
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+
+          // смена хедера
+          $.ajax({
+            type: "GET",
+            url: 'back/standart_header.php',
+            success: function (html) {
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
+            }
+          });
+
           break;
         case 2:
-          $(ids[i]).text('2');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active')
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Тип издаелия');
+
+          $('header.header').is(':visible') ? 1 : $('header.header').show();
+
+          $.ajax({
+            type: "GET",
+            url: 'back/carts.php',
+            data: {
+              'id': id
+            },
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+          $.ajax({
+            type: "GET",
+            url: 'back/standart_header.php',
+            success: function (html) {
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
+            }
+          });
           break;
         case 3:
-          $(ids[i]).text('3');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active')
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Модель');
+
+          $('header.header').is(':visible') ? 1 : $('header.header').show();
+
+          $.ajax({
+            type: "GET",
+            url: 'back/carts.php',
+            data: {
+              'id': id
+            },
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+          $.ajax({
+            type: "GET",
+            url: 'back/standart_header.php',
+            success: function (html) {
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
+            }
+          });
           break;
         case 4:
-          $(ids[i]).text('4');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active')
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Материал');
+
+          $('header.header').is(':visible') ? 1 : $('header.header').show();
+
+          $.ajax({
+            type: "GET",
+            url: 'back/carts.php',
+            data: {
+              'id': id
+            },
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+
+          $.ajax({
+            type: "GET",
+            url: "back/material_header.php",
+            data: {
+              'id': id
+            },
+            success: function (html) {
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
+            }
+          });
+
+
           break;
         case 5:
-          $(ids[i]).text('5');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active')
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Принт');
+
+          $('header.header').is(':visible') ? 1 : $('header.header').show();
+
+          $.ajax({
+            type: "GET",
+            url: 'back/prints.php',
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+
+          $.ajax({
+            type: "GET",
+            url: "back/print_header.php",
+            success: function (html) {
+              $(isActiveHeader ? "#new-header-content" : ".header__page-content.inner__content").html(html);
+            }
+          });
+
           break;
         case 6:
-          $(ids[i]).text('6');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active')
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Количество');
+
+          $('header.header').is(':visible') ? $('header.header').hide() : 1;
+
+          $.ajax({
+            type: "GET",
+            url: "back/count.php",
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+
+
           break;
         case 7:
-          $(ids[i]).text('7');
+          $($('.btn-navigation').not($(this))).parent().removeClass('active');
+          $(this).parent().addClass('active');
+
+          //$($('.btn-navigation').not($(this))).next().hide();
+          //$(this).next().is(':visible') ? 1 : $(this).next().toggle();
+
+          $(this).text('Услуги');
+
+          $('header.header').is(':visible') ? $('header.header').hide() : 1;
+
+          $.ajax({
+            type: "GET",
+            url: "back/services.php",
+            success: function (html) {
+              $(isActiveContent ? '#new-content' : ".inner-container.page-content").html(html);
+            }
+          });
+
           break;
+      }
+
+      // смена названия не активной кнопки
+      let ids = $('.btn-navigation').not($(this));
+      for (let i = 0; i < ids.length; i++) {
+        const identificator = Number($(ids[i]).attr('id'));
+        switch (identificator) {
+          case 1:
+            $(ids[i]).text('1');
+            break;
+          case 2:
+            $(ids[i]).text('2');
+            break;
+          case 3:
+            $(ids[i]).text('3');
+            break;
+          case 4:
+            $(ids[i]).text('4');
+            break;
+          case 5:
+            $(ids[i]).text('5');
+            break;
+          case 6:
+            $(ids[i]).text('6');
+            break;
+          case 7:
+            $(ids[i]).text('7');
+            break;
+        }
       }
     }
   });
@@ -649,11 +662,14 @@ $(document).ready(function () {
     $(".popup__bg").addClass('active');
     $(".popup").addClass('active');
     $("body").css('overflow', 'hidden');
+    $.ajax({
+      type:"GET",
+      url:"back/popup.php",
+      success: function(html){
+        $(".popup").html(html);
+      }
+    });
   });
 
-  $(".close-popup").on('click', function () {
-    $(".popup__bg").removeClass('active');
-    $(".popup").removeClass('active');
-    $('body').css('overflow', 'auto')
-  });
+  
 });

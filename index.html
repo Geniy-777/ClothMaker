@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,72 +10,39 @@
     <link rel="stylesheet" href="styles/print-page.css" />
     <link rel="stylesheet" href="styles/count-service-page.css" />
     <link rel="stylesheet" href="styles/popup.css" />
+    <link rel="stylesheet" href="styles/loader.css" />
 
     <title>ClothMaker</title>
   </head>
 
   <body>
-    <div class="content">
+    <!-- <div class="btn-operation" id="+">+</div>
+    <div class="btn-operation" id="-">-</div>
+    <div class="btn-operation" id="1">1</div> -->
+
+    <main class="content">
       <header class="header">
         <div class="header__container">
           <div class="header__page-content inner__content"></div>
-          <div class="header__page-content active" id="new-header-content"></div>
+          <div
+            class="header__page-content active"
+            id="new-header-content"
+          ></div>
         </div>
       </header>
 
+      <section class="loader">
+        <div class="loader__circle-helper">
+          <p class="loader__title">Cloth Maker</p>
+          <span class="loader__animation"></span>
+          <p class="loader__description">Страница загружается</p>
+        </div>
+      </section>
+
       <div class="popup__bg">
         <form class="popup">
-          <div class="top-side">
-            <img src="images/close.png" class="close-popup" />
-            <label for="" class="title">Поделится</label>
-          </div>
-          <div class="select-wrapper">
-            <div class="select">
-              <div>
-                <button class="button-share button-popup-vk">
-                  <img src="images/social/vk.png" alt="" /> ВКонтакте
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-whatapp">
-                  <img src="images/social/whats-app.png" alt="" />WhatsApp
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-facebook">
-                  <img src="images/social/Facebook.png" alt="" /> Facebook
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-twitter">
-                  <img src="images/social/twitter.png" alt="" /> Twitter
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-youtube">
-                  <img src="images/social/YouTube.png" alt="" /> YouTube
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-pinterest">
-                  <img src="images/social/Pinterest.png" alt="" /> Pinterest
-                </button>
-              </div>
-              <div>
-                <button class="button-share button-popup-instagram">
-                  <img src="images/social/Instagram.png" alt="" /> Instagram
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="link">
-            <input
-              class="copy-input"
-              type="text"
-              value="https://geniy-777.github.io/miratex/"
-            />
-            <button class="button-share-link">Копировать</button>
-          </div>
+          
+          
         </form>
       </div>
 
@@ -151,10 +118,12 @@
           </button>
         </div>
       </div>
-    </div>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/TweenMax.min.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/animation-logic.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="scripts/loader.js"></script>
   </body>
 </html>

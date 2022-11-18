@@ -35,6 +35,7 @@ TweenMax.set("#new-header-content", {
 
 function animateTranslateContent(isRotate) {
   var tlFlip = new TimelineMax();
+  isRotate?$("#new-content").show():$(".inner-container").show();
   tlFlip
     .to('.main-scale-container', .5, {
       scale: 0.8,
@@ -55,6 +56,10 @@ function animateTranslateContent(isRotate) {
       scale: 1,
       ease: Power2.easeInOut
     }, "start+=1.2");
+
+    setTimeout(() => {
+      !isRotate?$("#new-content").hide():$(".inner-container").hide();
+    }, 1700);
 }
 
 function animateTranslateHeader(isRotate) {

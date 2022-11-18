@@ -59,6 +59,7 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!--  ДОПОЛНИТЕЛЬНЫЕ ФИЛЬТРЫ      -_--->
   <div class="additional-filter" hidden>
@@ -126,5 +127,4 @@
     </div>
 
   </div>
-</div>
 <script src="scripts/script-print-page.js"></script>
