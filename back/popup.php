@@ -1,4 +1,4 @@
-<div class="popup__container">
+<div class="popup__container" id="1">
   <div class="top-side">
     <img src="imgs/close.png" class="close-popup" />
     <h2 for="" class="title popup__title"><?php //Динамический заголовок?>Пальто</h2>
@@ -24,5 +24,6 @@
       <img src="../imgs/Пальто.png">
     </div>
   </div>
+  <button class="select-cart">Выбрать</button>
 </div>
 <script src="../scripts/popup.js"></script>

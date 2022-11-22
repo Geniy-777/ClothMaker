@@ -1,3 +1,5 @@
+
+
 document.body.onload = function () {
   $.ajax({
     type: "GET",
@@ -53,6 +55,16 @@ $(document).ready(function () {
       //const mark = $('.box-btn-animation.active').find('.mark-active');
       //mark.is(':visible') ? 1 : mark.toggle();
 
+      let arr = $("#selected_items_container").attr("class").split(" ")
+      if(arr.length)
+        $.ajax({
+          type: "GET",
+          data: arr,
+          url: 'https://google.com'      
+        })
+      console.log(arr.length);
+
+      // Смена в верхней навигации + смена контента
       switch ((id_btn + 1)) {
 
         case 2:
@@ -673,3 +685,5 @@ $(document).ready(function () {
 
   
 });
+
+
