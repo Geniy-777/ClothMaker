@@ -19,11 +19,11 @@
         <img src="../imgs/Кромби.svg" alt="">
         <img src="../imgs/Куртка.svg" alt="">
       </div>
+      <button class="select-cart">Выбрать</button>
     </div>
     <div class="popup-slider">
       <img src="../imgs/Пальто.png">
     </div>
   </div>
-  <button class="select-cart">Выбрать</button>
 </div>
 <script src="../scripts/popup.js"></script>
