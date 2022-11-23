@@ -34,8 +34,8 @@ $(document).ready(function () {
 
   $('.button-controller-next').off();
   $('.button-controller-next').on('click.next', function () {
-    const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
-
+    let id_btn = Number(($('.box-btn-animation.active').find('.btn-navigation').attr('id')).slice(-1));
+    
     if (id_btn < 7) {
       let isActiveContent = $("#new-content").hasClass("active") ? true : false;
       let isActiveHeader = $("#new-header-content").hasClass("active") ? true : false;
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
       //$('.box-btn-animation.active').find('.mark-active').hide();
       $('.box-btn-animation.active').removeClass('active');
-      $('.btn-navigation#' + (id_btn + 1)).parent().addClass('active');
+      $('.btn-navigation#nav-' + (id_btn + 1)).parent().addClass('active');
 
       //const mark = $('.box-btn-animation.active').find('.mark-active');
       //mark.is(':visible') ? 1 : mark.toggle();
@@ -69,7 +69,7 @@ $(document).ready(function () {
       switch ((id_btn + 1)) {
 
         case 2:
-          $('.btn-navigation#' + (id_btn + 1)).text('Тип издаелия');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Тип издаелия');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
           break;
         case 3:
-          $('.btn-navigation#' + (id_btn + 1)).text('Модель');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Модель');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
           break;
         case 4:
-          $('.btn-navigation#' + (id_btn + 1)).text('Материал');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Материал');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -143,7 +143,7 @@ $(document).ready(function () {
           });
           break;
         case 5:
-          $('.btn-navigation#' + (id_btn + 1)).text('Принт');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Принт');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -165,7 +165,7 @@ $(document).ready(function () {
 
           break;
         case 6:
-          $('.btn-navigation#' + (id_btn + 1)).text('Количество');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Количество');
 
           $('header.header').is(':visible') ? $('header.header').hide() : 1;
 
@@ -179,7 +179,7 @@ $(document).ready(function () {
 
           break;
         case 7:
-          $('.btn-navigation#' + (id_btn + 1)).text('Услуги');
+          $('.btn-navigation#nav-' + (id_btn + 1)).text('Услуги');
 
           $('header.header').is(':visible') ? $('header.header').hide() : 1;
 
@@ -196,25 +196,25 @@ $(document).ready(function () {
       switch (id_btn) {
         case 1:
           // смена текста кнопки
-          $('.btn-navigation#' + (id_btn)).text('1');
+          $('.btn-navigation#nav-' + (id_btn)).text('1');
           break;
         case 2:
-          $('.btn-navigation#' + (id_btn)).text('2');
+          $('.btn-navigation#nav-' + (id_btn)).text('2');
           break;
         case 3:
-          $('.btn-navigation#' + (id_btn)).text('3');
+          $('.btn-navigation#nav-' + (id_btn)).text('3');
           break;
         case 4:
-          $('.btn-navigation#' + (id_btn)).text('4');
+          $('.btn-navigation#nav-' + (id_btn)).text('4');
           break;
         case 5:
-          $('.btn-navigation#' + (id_btn)).text('5');
+          $('.btn-navigation#nav-' + (id_btn)).text('5');
           break;
         case 6:
-          $('.btn-navigation#' + (id_btn)).text('6');
+          $('.btn-navigation#nav-' + (id_btn)).text('6');
           break;
         case 7:
-          $('.btn-navigation#' + (id_btn)).text('7');
+          $('.btn-navigation#nav-' + (id_btn)).text('7');
           break;
       }
     }
@@ -222,7 +222,8 @@ $(document).ready(function () {
 
   $('.button-controller-back').off();
   $('.button-controller-back').on('click.back', function () {
-    const id_btn = Number($('.box-btn-animation.active').find('.btn-navigation').attr('id'));
+    let id_btn = Number(($('.box-btn-animation.active').find('.btn-navigation').attr('id')).slice(-1));
+    
     if (id_btn > 1) {
 
       let isActiveContent = $("#new-content").hasClass("active") ? true : false;
@@ -237,14 +238,14 @@ $(document).ready(function () {
 
 
       $('.box-btn-animation.active').removeClass('active');
-      $('.btn-navigation#' + (id_btn - 1)).parent().addClass('active');
+      $('.btn-navigation#nav-' + (id_btn - 1)).parent().addClass('active');
 
       //const mark = $('.box-btn-animation.active').find('.mark-active');
       //mark.is(':visible') ? 1 : mark.toggle();
 
       switch ((id_btn - 1)) {
         case 1:
-          $('.btn-navigation#' + (id_btn - 1)).text('Одежда');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Одежда');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -269,7 +270,7 @@ $(document).ready(function () {
 
           break;
         case 2:
-          $('.btn-navigation#' + (id_btn - 1)).text('Тип издаелия');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Тип издаелия');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -294,7 +295,7 @@ $(document).ready(function () {
 
           break;
         case 3:
-          $('.btn-navigation#' + (id_btn - 1)).text('Модель');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Модель');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -319,7 +320,7 @@ $(document).ready(function () {
 
           break;
         case 4:
-          $('.btn-navigation#' + (id_btn - 1)).text('Материал');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Материал');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -345,7 +346,7 @@ $(document).ready(function () {
 
           break;
         case 5:
-          $('.btn-navigation#' + (id_btn - 1)).text('Принт');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Принт');
 
           $('header.header').is(':visible') ? 1 : $('header.header').show();
 
@@ -366,7 +367,7 @@ $(document).ready(function () {
 
           break;
         case 6:
-          $('.btn-navigation#' + (id_btn - 1)).text('Количество');
+          $('.btn-navigation#nav-' + (id_btn - 1)).text('Количество');
 
           $('header.header').is(':visible') ? $('header.header').hide() : 1;
 
@@ -386,25 +387,25 @@ $(document).ready(function () {
       switch ((id_btn)) {
         case 1:
           // смена текста кнопки
-          $('.btn-navigation#' + (id_btn)).text('1');
+          $('.btn-navigation#nav-' + (id_btn)).text('1');
           break;
         case 2:
-          $('.btn-navigation#' + (id_btn)).text('2');
+          $('.btn-navigation#nav-' + (id_btn)).text('2');
           break;
         case 3:
-          $('.btn-navigation#' + (id_btn)).text('3');
+          $('.btn-navigation#nav-' + (id_btn)).text('3');
           break;
         case 4:
-          $('.btn-navigation#' + (id_btn)).text('4');
+          $('.btn-navigation#nav-' + (id_btn)).text('4');
           break;
         case 5:
-          $('.btn-navigation#' + (id_btn)).text('5');
+          $('.btn-navigation#nav-' + (id_btn)).text('5');
           break;
         case 6:
-          $('.btn-navigation#' + (id_btn)).text('6');
+          $('.btn-navigation#nav-' + (id_btn)).text('6');
           break;
         case 7:
-          $('.btn-navigation#' + (id_btn)).text('7');
+          $('.btn-navigation#nav-' + (id_btn)).text('7');
           break;
       }
     }
@@ -415,7 +416,7 @@ $(document).ready(function () {
 
 
 
-    const id = $(this).attr('id');
+    const id = Number($(this).attr('id').slice(-1));
 
     if (!$(this).parent().hasClass("active")) {
 
@@ -636,7 +637,7 @@ $(document).ready(function () {
       // смена названия не активной кнопки
       let ids = $('.btn-navigation').not($(this));
       for (let i = 0; i < ids.length; i++) {
-        const identificator = Number($(ids[i]).attr('id'));
+        const identificator = Number($(ids[i]).attr('id').slice(-1));
         switch (identificator) {
           case 1:
             $(ids[i]).text('1');
