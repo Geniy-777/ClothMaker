@@ -1,4 +1,6 @@
 
+// test_arr.push(1)
+// console.log(test_arr);
 
 $(".close-popup").on('click', function () {
   $(".popup__bg").removeClass('active');
@@ -14,7 +16,6 @@ $('.select-cart').on("click",function(e){
 
   $("#selected_items_container").addClass($(".popup__container").attr("id"))
 
-  console.log($("#selected_items_container").attr("class"));
   $(".popup__bg").removeClass('active');
   $(".popup").removeClass('active');
   $('body').css('overflow', 'auto')

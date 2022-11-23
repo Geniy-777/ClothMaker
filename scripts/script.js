@@ -1,3 +1,4 @@
+// let test_arr = new Array();
 
 
 document.body.onload = function () {
@@ -55,14 +56,14 @@ $(document).ready(function () {
       //const mark = $('.box-btn-animation.active').find('.mark-active');
       //mark.is(':visible') ? 1 : mark.toggle();
 
-      let arr = $("#selected_items_container").attr("class").split(" ")
-      if(arr.length)
+      if ($("#selected_items_container").attr("class")!= undefined) {
+        let arr = $("#selected_items_container").attr("class").split(" ")
         $.ajax({
           type: "GET",
           data: arr,
-          url: 'https://google.com'      
+          url: ""
         })
-      console.log(arr.length);
+      }
 
       // Смена в верхней навигации + смена контента
       switch ((id_btn + 1)) {
@@ -675,15 +676,13 @@ $(document).ready(function () {
     $(".popup").addClass('active');
     $("body").css('overflow', 'hidden');
     $.ajax({
-      type:"GET",
-      url:"back/popup.php",
-      success: function(html){
+      type: "GET",
+      url: "back/popup.php",
+      success: function (html) {
         $(".popup").html(html);
       }
     });
   });
 
-  
+
 });
-
-

@@ -1,6 +1,6 @@
-<div class="popup__container" id="1">
+<div class="popup__container" id="50">
   <div class="top-side">
-    <img src="imgs/close.png" class="close-popup" />
+    <img src="./imgs/close.png" class="close-popup" />
     <h2 for="" class="title popup__title"><?php //Динамический заголовок?>Пальто</h2>
   </div>
   <div class="popup__inner-content">
@@ -15,15 +15,15 @@
         </p>
       </div>
       <div class="popup-content__images">
-        <img src="../imgs/Джинса.svg" alt="">
-        <img src="../imgs/Кромби.svg" alt="">
-        <img src="../imgs/Куртка.svg" alt="">
+        <img src="./imgs/Джинса.svg" alt="">
+        <img src="./imgs/Кромби.svg" alt="">
+        <img src="./imgs/Куртка.svg" alt="">
       </div>
       <button class="select-cart">Выбрать</button>
     </div>
     <div class="popup-slider">
-      <img src="../imgs/Пальто.png">
+      <img src="./imgs/Пальто.png">
     </div>
   </div>
 </div>
-<script src="../scripts/popup.js"></script>
+<script src="./scripts/popup.js"></script>

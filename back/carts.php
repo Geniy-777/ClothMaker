@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="cart" id="1">
+<div class="cart" id="11">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -33,7 +33,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="2">
+<div class="cart" id="12">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -52,7 +52,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="3">
+<div class="cart" id="13">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -71,7 +71,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="4">
+<div class="cart" id="14">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -90,7 +90,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="5">
+<div class="cart" id="15">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -105,7 +105,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="6">
+<div class="cart" id="16">
   <div class="for-blur">
 
     <img class="cart-img" src="imgs/Palto.png" alt="">
@@ -125,7 +125,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="7">
+<div class="cart" id="17">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -144,7 +144,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="8">
+<div class="cart" id="18">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -163,7 +163,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="9">
+<div class="cart" id="19">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -182,7 +182,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="10">
+<div class="cart" id="20">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
@@ -201,7 +201,7 @@
   <p class="prise">22 980 руб</p>
   <button class="btn-more-info">Подробнее</button>
 </div>
-<div class="cart" id="11">
+<div class="cart" id="21">
   <div class="for-blur">
     <img class="cart-img" src="imgs/Palto.png" alt="">
     <h4 class="title-cart">Пальто</h4>
